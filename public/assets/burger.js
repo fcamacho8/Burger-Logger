@@ -2,13 +2,11 @@ $(function() {
 
   $(".devourBtn").on('click', function(event) {
 
-    event.preventDefault();
+    
     var id = $(this).data("id");
-    var newDevoured = $(this).data("newsleep");
+    var newDevoured = $(this).data("devour");
 
-    var newDevState = {
-      devoured: newDevoured
-    };
+    var newDevState = {devoured: 1}
 
 
     $.ajax("/api/burgers/" + id, {
@@ -26,7 +24,7 @@ $(function() {
 
   $(".create-form").on("submit", function(event) {
       // Make sure to preventDefault on a submit event.
-      event.preventDefault();
+  
       console.log("Button worked");
   
       let newBurger = {
